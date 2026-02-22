@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://127.0.0.1:5000";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://gaiabreath-backend.onrender.com/";
 export const ADMIN_TOKEN_KEY = "gaiabreath_admin_token";
 export const AUTH_TOKEN_KEY = "gaiabreath_auth_token";
 export const AUTH_ROLE_KEY = "gaiabreath_auth_role";
