@@ -1,0 +1,124 @@
+.aqi-map-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e8faf5, #f6fffc);
+  padding: 36px 18px;
+}
+
+.aqi-map-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.aqi-map-header h1 {
+  margin: 0;
+  color: #053f35;
+}
+
+.aqi-map-header p {
+  margin: 8px 0 0;
+  color: #3f4d4a;
+}
+
+.aqi-map-controls {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.aqi-map-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #0f3a33;
+}
+
+.aqi-map-controls input,
+.aqi-map-controls select {
+  border: 1px solid #c9ded9;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfffe;
+}
+
+.aqi-tile-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #d9eeea;
+}
+
+.aqi-tile {
+  position: relative;
+}
+
+.aqi-tile img {
+  width: 100%;
+  display: block;
+}
+
+.aqi-tile img:last-child {
+  position: absolute;
+  inset: 0;
+  opacity: 0.58;
+}
+
+.aqi-map-actions {
+  margin-top: 12px;
+}
+
+.aqi-map-actions button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.aqi-map-note {
+  margin: 14px 0 0;
+  color: #4b5563;
+}
+
+.aqi-map-back {
+  margin: 12px 0 0;
+}
+
+.aqi-map-back a {
+  color: #075b4b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  .aqi-map-card {
+    padding: 16px;
+  }
+}
+/* Unified Theme Overrides */
+.aqi-map-page {
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+}
+
+.aqi-map-card {
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-pop);
+}
+
+.aqi-map-header h1,
+.aqi-map-back a {
+  color: var(--text-strong);
+}
+
+.aqi-map-actions button {
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+}

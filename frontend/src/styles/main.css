@@ -5,10 +5,12 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-body);
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
 }
 
 .landing-bg {
-  background: linear-gradient(180deg, #e8faf5, #f6fffc);
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
   min-height: 100vh;
 }
 
@@ -18,6 +20,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 40px;
+  backdrop-filter: blur(8px);
+  animation: fadeSlideIn 500ms var(--motion-smooth);
 }
 
 .nav-left {
@@ -30,7 +34,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: #1ec7a6;
+  background: var(--accent);
   color: white;
   display: grid;
   place-items: center;
@@ -53,13 +57,13 @@ body {
 .brand-name {
   font-size: 20px;
   font-weight: 600;
-  color: #052e26;
+  color: var(--text-strong);
 }
 
 .nav-center a {
   margin: 0 18px;
   text-decoration: none;
-  color: #052e26;
+  color: var(--text-strong);
   font-weight: 500;
 }
 
@@ -75,8 +79,8 @@ body {
 
 /* LOGIN BUTTON */
 .login-btn {
-  background: #1ec7a6;
-  color: #052e26;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
   border: none;
   padding: 10px 22px;
   border-radius: 999px;
@@ -95,7 +99,7 @@ body {
 }
 
 .login-card {
-  background: white;
+  background: var(--surface);
   padding: 28px;
   border-radius: 18px;
   width: 320px;
@@ -115,10 +119,50 @@ body {
   border: 1px solid #d1d5db;
 }
 
+.login-error {
+  margin: 0;
+  color: #8b1f1f;
+  background: #ffe6e6;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.login-success {
+  margin: 0;
+  color: #065f46;
+  background: #d1fae5;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+}
+
 .login-actions {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+}
+
+.login-modes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.login-modes button {
+  border: 1px solid #cfe9e2;
+  border-radius: 10px;
+  padding: 8px 6px;
+  background: #f8fffd;
+  color: #0f3a33;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-modes button.active {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
 }
 
 /* ===================== HERO WRAPPER ===================== */
@@ -138,11 +182,10 @@ body {
 
   padding: 50px 60px;
 
-  background: #e9f7f2;
-  border-radius: 22px;
-  border: 1px solid #d3efe6;
-
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
 
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
@@ -150,7 +193,7 @@ body {
 
 .hero:hover {
   transform: translateY(-8px);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-pop);
 }
 
 /* ===================== HERO TEXT ===================== */
@@ -162,11 +205,11 @@ body {
   font-size: 48px;
   line-height: 1.15;
   margin: 0 0 16px;
-  color: #052e26;
+  color: var(--text-strong);
 }
 
 .hero-left h1 span {
-  color: #064e3b;
+  color: var(--accent-dark);
 }
 
 .hero-left p {
@@ -182,8 +225,8 @@ body {
 }
 
 .btn-primary {
-  background: #1ec7a6;
-  color: #052e26;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
   border: none;
   padding: 14px 26px;
   border-radius: 999px;
@@ -193,8 +236,9 @@ body {
 }
 
 .btn-secondary {
-  background: white;
-  color: #052e26;
+  background: var(--surface);
+  color: var(--text-strong);
+  border: 1px solid var(--border-soft);
   border: none;
   padding: 14px 26px;
   border-radius: 999px;
@@ -224,6 +268,7 @@ body {
 /* ===================== MISSION SECTION ===================== */
 .mission-section {
   padding: 100px 100px 120px;   /* spacing instead of line */
+  animation: fadeSlideIn 650ms var(--motion-smooth);
 }
 
 .mission-section h2 {
@@ -296,6 +341,7 @@ body {
 /* ===================== FEATURES SECTION ===================== */
 .features-section {
   padding: 100px 100px 120px;
+  animation: fadeSlideIn 800ms var(--motion-smooth);
 }
 
 .features-section h2 {
@@ -317,7 +363,7 @@ body {
   border-radius: 22px;
   color: #052e26;
 
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-soft);
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -327,7 +373,7 @@ body {
 
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--shadow-pop);
 }
 
 /* ICON */
@@ -400,7 +446,7 @@ body {
   width: 300px;
   height: 100vh;
 
-  background: #f6fffc;
+  background: var(--surface-soft);
   padding: 32px 24px;
 
   box-shadow: 20px 0 40px rgba(0, 0, 0, 0.25);
@@ -417,14 +463,14 @@ body {
 
 /* ITEMS */
 .sidebar-item {
-  background: white;
+  background: var(--surface);
   border-radius: 16px;
   padding: 16px 18px;
   margin-bottom: 14px;
 
   font-size: 16px;
   font-weight: 500;
-  color: #052e26;
+  color: var(--text-strong);
 
   display: flex;
   align-items: center;
@@ -453,7 +499,7 @@ body {
   border-radius: 999px;
   border: none;
 
-  background: linear-gradient(180deg, #0f766e, #064e3b);
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
   color: white;
   font-size: 15px;
   font-weight: 600;
@@ -506,7 +552,7 @@ body {
 .healthchat-card {
   width: 520px;
   max-width: 90%;
-  background: #f6fffc;
+  background: var(--surface-soft);
   padding: 28px;
   border-radius: 22px;
 
@@ -545,4 +591,94 @@ body {
   border: none;
   background: #e5e7eb;
   cursor: pointer;
+}
+
+.advisor-page,
+.report-page,
+.community-page,
+.aqi-map-page,
+.iot-page {
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+}
+
+.advisor-card,
+.report-card,
+.aqi-map-card,
+.iot-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-pop);
+  animation: fadeSlideIn 500ms var(--motion-smooth);
+}
+
+.community-form,
+.admin-panel,
+.post-card {
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--motion-smooth), box-shadow var(--motion-smooth);
+}
+
+.community-form:hover,
+.admin-panel:hover,
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+}
+
+.advisor-inputs input,
+.report-inputs input,
+.community-form input,
+.community-form textarea,
+.aqi-map-controls input,
+.aqi-map-controls select,
+.iot-controls select {
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+}
+
+.advisor-inputs button,
+.report-inputs button,
+.community-form button,
+.aqi-map-actions button,
+.print-btn,
+.iot-controls button,
+.post-delete {
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
+  transition: transform var(--motion-smooth), filter var(--motion-smooth);
+}
+
+.advisor-inputs button:hover,
+.report-inputs button:hover,
+.community-form button:hover,
+.aqi-map-actions button:hover,
+.print-btn:hover,
+.iot-controls button:hover,
+.post-delete:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.post-delete {
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+}
+
+.advisor-error,
+.report-error,
+.community-error,
+.iot-error {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function HeroBlock() {
   return (
     <section className="hero">
@@ -15,10 +17,12 @@ function HeroBlock() {
         </p>
 
         <div className="hero-buttons">
-          <a href="/healthadvisor">
-            <button className="btn-primary">HealthAdvisor</button>
-          </a>
-          <button className="btn-secondary">Our Mission</button>
+          <Link to="/healthadvisor">
+            <button className="btn-primary">Health Advisor</button>
+          </Link>
+          <Link to="/about">
+            <button className="btn-secondary">Our Mission</button>
+          </Link>
         </div>
       </div>
 

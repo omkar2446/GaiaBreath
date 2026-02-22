@@ -1,44 +1,55 @@
+const FEATURES = [
+  {
+    title: "Live AQI Map",
+    description: "Continuous tracking of air quality in real time.",
+    variant: "green",
+    icon: "MAP",
+  },
+  {
+    title: "Personal Safety Alerts",
+    description: "Instant notifications when air quality drops.",
+    variant: "teal",
+    icon: "ALERT",
+  },
+  {
+    title: "AI Chat Bot",
+    description: "AI-powered health advice based on AQI levels.",
+    variant: "blue",
+    icon: "AI",
+  },
+  {
+    title: "IoT AQI Monitoring",
+    description: "IoT devices monitor live AQI data around you.",
+    variant: "mint",
+    icon: "IOT",
+  },
+  {
+    title: "Health Reports",
+    description: "Daily exposure reports and health insights.",
+    variant: "rose",
+    icon: "CARE",
+  },
+  {
+    title: "Community Dashboard",
+    description: "Share updates and learn about local air quality.",
+    variant: "slate",
+    icon: "HUB",
+  },
+];
+
 function FeaturesBlock() {
   return (
     <section className="features-section">
       <h2>Features of GaiaBreathAI</h2>
 
       <div className="features-grid">
-        <div className="feature-card green">
-          <span className="feature-icon">🗺️</span>
-          <h3>Live AQI Map</h3>
-          <p>Continuous tracking of air quality in real time.</p>
-        </div>
-
-        <div className="feature-card teal">
-          <span className="feature-icon">🔔</span>
-          <h3>Personal Safety Alerts</h3>
-          <p>Instant notifications when air quality drops.</p>
-        </div>
-
-        <div className="feature-card blue">
-          <span className="feature-icon">🤖</span>
-          <h3>AI Chat Bot</h3>
-          <p>AI-powered health advice based on AQI levels.</p>
-        </div>
-
-        <div className="feature-card mint">
-          <span className="feature-icon">⚙️</span>
-          <h3>IoT AQI Monitoring</h3>
-          <p>IoT devices monitor live AQI data around you.</p>
-        </div>
-
-        <div className="feature-card rose">
-          <span className="feature-icon">❤️</span>
-          <h3>Health Reports</h3>
-          <p>Daily exposure reports and health insights.</p>
-        </div>
-
-        <div className="feature-card slate">
-          <span className="feature-icon">💬</span>
-          <h3>Community Dashboard</h3>
-          <p>Share updates and learn about local air quality.</p>
-        </div>
+        {FEATURES.map((feature) => (
+          <div key={feature.title} className={`feature-card ${feature.variant}`}>
+            <span className="feature-icon">{feature.icon}</span>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
