@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "./HeroBlock.css";
+import heroImage from "../../assets/ilove.jpeg";
 
 function HeroBlock() {
   return (
@@ -28,8 +30,8 @@ function HeroBlock() {
 
       <div className="hero-right">
         <div className="hero-image-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+          <img 
+            src={heroImage}
             alt="Clean air"
           />
         </div>
